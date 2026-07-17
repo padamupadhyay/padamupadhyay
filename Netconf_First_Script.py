@@ -23,3 +23,22 @@ print(pretty_output)
 
 # Good practice: Close the NETCONF session when done
 netconf.close_session()
+
+
+
+
+
+# configuration Need to be done on Router to connect to Netconf on SSH
+# enable
+# config t
+# hosetname RTR1
+# ip domain-name xyz.com
+# crypto key generate rsa mod 1024
+# ip ssh version 2
+# username admin priv 15 pass cisco
+# line vty 0 4
+# login local
+# tranceport input all
+# exit
+# netconf ssh
+# netconf-yang
